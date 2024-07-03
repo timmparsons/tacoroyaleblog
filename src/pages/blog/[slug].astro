@@ -19,7 +19,7 @@ const { Content } = await post.render();
 <Layout title={post.data.title}>
 	<Main>
 		<H1 text={post.data.title}/>
-		<h3>{post.data.date}</h3>
+		<h3 class="font-bold mb-10">{post.data.date}</h3>
     <!-- <Image 
       src={post.data.image} 
       width={850}
@@ -27,7 +27,7 @@ const { Content } = await post.render();
       alt={post.data.title}
       class="rounded-2xl shadow-xl md-4 aspect-thumbnail object-cover"
     /> -->
-    <div class="prose prose-2xl overflow-visible relative mb-20">
+    <div class="prose prose overflow-visible relative pb-40">
       <Content />
     </div>
 	</Main>
