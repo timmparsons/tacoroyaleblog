@@ -11,7 +11,7 @@ const { post } = Astro.props;
 <article>
   <a href={`/blog/${post.slug}`}>
     <Image 
-      src={post.data.image} 
+      src={`${post.data.image}?url`} 
       width={400}
       height={400 / 1.5}
       alt={post.data.title}
