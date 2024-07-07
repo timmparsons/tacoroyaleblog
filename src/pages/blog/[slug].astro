@@ -13,14 +13,14 @@ if(!post){
 	return Astro.redirect('/404')
 }
 const { Content } = await post.render();
+const { data: { author } } = post;
+const authorText = `Author: ${author}`;
 ---
-
-
 <Layout title={post.data.title}>
 	<Main>
 		<H1 text={post.data.title}/>
 		<h3 class="font-bold mb-10">{post.data.date}</h3>
-		<h3 class="font-bold mb-10">{post.data.author}</h3>
+		<h3 class="mb-10">{authorText}</h3>
     <!-- <Image 
       src={post.data.image} 
       width={850}
