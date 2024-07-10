@@ -23,13 +23,7 @@ const { post } = Astro.props;
 				<p class="p-[5px] mt-5">{post.data.length} read</p>
 			</div>
 			<a href={`/blog/${post.slug}`} class="text-zinc-900 font-semibold inline-block">
-				<button class="alert border border-black rounded-[5px] mt-5">Read Article ></button>
+				<button class="alert border border-black rounded-[5px] p-3 mt-5">Read Article ></button>
 			</a>
 		</div>
 </article>
-
-<script>
-	const button = document.querySelector('button.alert')
-	button.addEventListener('click', () => {
-	console.log('Clicked')})
-</script>
