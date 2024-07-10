@@ -7,6 +7,7 @@ const postCollection = defineCollection({
       author: z.string(),
       date: z.string(),
       image: image(),
+      tags: z.string(),
     }),
 });
 
