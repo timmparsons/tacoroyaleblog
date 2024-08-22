@@ -6,6 +6,16 @@ type Props = {
 }
 
 const { posts } = Astro.props;
+function parseDate(dateString: string): Date {
+  // Assuming date format is 'Aug 2nd 25, 2024'
+  const [monthDay, year] = dateString.split(', ');
+  const [month, day] = monthDay.split(' ');
+  const monthIndex = new Date(`${month} 1`).getMonth(); // Get month index
+  const dayNumber = parseInt(day.replace(/\D/g, '')); // Remove 'st', 'nd', 'rd', 'th'
+  return new Date(Number(year), monthIndex, dayNumber);
+}
+
+const latestPost = posts.sort((a, b) => parseDate(b.data.date).getTime() - parseDate(a.data.date).getTime());
 ---
 
 <div class="grid grid-cols-2 gap-x-16 gap-y-14 max-md:grid-cols-1 mb-24">

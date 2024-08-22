@@ -13,7 +13,7 @@ if(!post){
 	return Astro.redirect('/404')
 }
 const { Content } = await post.render();
-const { data: { author } } = post;
+const { data: { author, date } } = post;
 const authorText = `Author: ${author}`;
 ---
 <Layout title={post.data.title}>
