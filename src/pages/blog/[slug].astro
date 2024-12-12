@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import H1 from '../../components/H1.astro';
+import H2 from '../../components/H2.astro';
 import Main from '../../components/Main.astro';
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
@@ -18,7 +18,7 @@ const authorText = `Author: ${author}`;
 ---
 <Layout title={post.data.title}>
 	<Main>
-		<H1 text={post.data.title}/>
+		<H2 text={post.data.title}/>
 		<h3 class="font-bold mb-10">{post.data.date}</h3>
 		<h3 class="mb-10">{authorText}</h3>
     <!-- <Image 
